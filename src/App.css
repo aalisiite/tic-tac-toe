@@ -71,6 +71,21 @@ body {
   width: 34px;
 }
 
+.winner-square {
+  background: #ec0606;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
 .board-row:after {
   clear: both;
   content: '';
@@ -80,11 +95,59 @@ body {
 .status {
   margin-bottom: 10px;
 }
+
 .game {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .game-info {
   margin-left: 20px;
+}
+
+.order {
+  margin-left: 20px;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 50px;
+	height: 25px;
+	background: grey;
+	display: block;
+	border-radius: 25px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 1px;
+	left: 5px;
+	width: 22.5px;
+	height: 22.5px;
+	background: #fff;
+	border-radius: 22.5px;
+	transition: 0.1s;
+}
+
+input:checked + label {
+	background: #bada55;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 32.5px;
 }
